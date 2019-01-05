@@ -130,3 +130,7 @@ vertical-align: middle;
 .jCenter {
   width: 10%;
 }
+
+@media (max-width : 415px) {
+  .jCenter {width: 20%;}
+}
