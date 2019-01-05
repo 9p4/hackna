@@ -126,3 +126,7 @@ vertical-align: middle;
 .jRight {
   text-align: right;
 }
+
+.jCenter {
+  width: 10%;
+}
