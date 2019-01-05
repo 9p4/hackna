@@ -67,14 +67,12 @@
         }
         
         go.onclick = function(evt) {
-            if (passwd.length<5) {
-                if (cryptYN.checked) {
-                    var done = CryptoJS.AES.encrypt(toDo, passwd.value);
-                    download("encrypted.uc", done)
-                } else {
-                    var done = CryptoJS.AES.decrypt(toDo, passwd.value).toString(CryptoJS.enc.Utf8);
-                    download("decrypted.txt", done);
-                }
+            if (cryptYN.checked) {
+                var done = CryptoJS.AES.encrypt(toDo, passwd.value);
+                download("encrypted.uc", done)
+            } else {
+                var done = CryptoJS.AES.decrypt(toDo, passwd.value).toString(CryptoJS.enc.Utf8);
+                download("decrypted.txt", done);
             }
         }
         

@@ -57,19 +57,14 @@
         
         go.onclick = function(evt) {
             toDo = textB.value;
-            if (passwd.length<5) {
-                if (cryptYN.checked) {
-                    done = CryptoJS.AES.encrypt(toDo.toString(CryptoJS.enc.Utf8), passwd.value);
-                    setTextBox(done);
-                    updateTextBox();
-                } else {
-                    done = CryptoJS.AES.decrypt(toDo, passwd.value).toString(CryptoJS.enc.Utf8);
-                    setTextBox(done);
-                    updateTextBox();
-                }
+            if (cryptYN.checked) {
+                done = CryptoJS.AES.encrypt(toDo.toString(CryptoJS.enc.Utf8), passwd.value);
+                setTextBox(done);
+                updateTextBox();
             } else {
-                alert("Type in a password at least 5 characters long!")
-            }
+                done = CryptoJS.AES.decrypt(toDo, passwd.value).toString(CryptoJS.enc.Utf8);
+                setTextBox(done);
+                updateTextBox();
         }
         function setTextBox(stringz) {
             textB.value=stringz;
