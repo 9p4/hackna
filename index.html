@@ -31,6 +31,21 @@
         <br>
         <p></p>
         <button type="button" class="button" id="go">Go!</button>
+        <br><br>
+        <p>How to use this program:<br><br>
+            To Encrypt:<br>
+            Open a plaintext file<br>
+            Make sure the slider is on "Encrypt"<br>
+            Type in the encryption password (same as decryption password)<br>
+            Press "Go!"<br>
+            Save resulting encrypted file<br><br>
+            To Decrypt:<br>
+            Open encrypted file<br>
+            Make sure the slider is on "Decrypt"<br>
+            Type in the decryption password (same as the encryption password)<br>
+            Press "Go!"<br>
+            Save resulting plaintext file
+        </p>
     </div>
     <iframe id="download_iframe" style="display:none;"></iframe>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
@@ -52,17 +67,14 @@
         }
         
         go.onclick = function(evt) {
-            if (cryptYN.checked) {
-                var done = CryptoJS.AES.encrypt(toDo, passwd.value);
-                download("encrypted.uc", done)
-            } else {
-                var done = CryptoJS.AES.decrypt(toDo, passwd.value).toString(CryptoJS.enc.Utf8);
-                /*
-                if(!CryptJS.test() {
-                    alert("Incorrect Password!");
-                } else {*/
+            if (passwd.length<5) {
+                if (cryptYN.checked) {
+                    var done = CryptoJS.AES.encrypt(toDo, passwd.value);
+                    download("encrypted.uc", done)
+                } else {
+                    var done = CryptoJS.AES.decrypt(toDo, passwd.value).toString(CryptoJS.enc.Utf8);
                     download("decrypted.txt", done);
-                //}
+                }
             }
         }
         

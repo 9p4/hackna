@@ -29,6 +29,21 @@
         <br>
         <p></p>
         <button type="button" class="button" id="go">Go!</button>
+        <br><br>
+        <p>How to use this program:<br><br>
+            To Encrypt:<br>
+            Paste some plaintext into the textbox above.<br>
+            Make sure the slider is on "Encrypt"<br>
+            Type in the encryption password (same as decryption password)<br>
+            Press "Go!"<br>
+            Copy encrypted text in textbox to use<br><br>
+            To Decrypt:<br>
+            Paste encrypted text into textbox<br>
+            Make sure the slider is on "Decrypt"<br>
+            Type in the decryption password (same as the encryption password)<br>
+            Press "Go!"<br>
+            Copy plaintext in textbox to use
+        </p>
     </div>
     <iframe id="download_iframe" style="display:none;"></iframe>
     <script src="js/aes.js"></script>
@@ -42,14 +57,18 @@
         
         go.onclick = function(evt) {
             toDo = textB.value;
-            if (cryptYN.checked) {
-                done = CryptoJS.AES.encrypt(toDo.toString(CryptoJS.enc.Utf8), passwd.value);
-                setTextBox(done);
-                updateTextBox();
+            if (passwd.length<5) {
+                if (cryptYN.checked) {
+                    done = CryptoJS.AES.encrypt(toDo.toString(CryptoJS.enc.Utf8), passwd.value);
+                    setTextBox(done);
+                    updateTextBox();
+                } else {
+                    done = CryptoJS.AES.decrypt(toDo, passwd.value).toString(CryptoJS.enc.Utf8);
+                    setTextBox(done);
+                    updateTextBox();
+                }
             } else {
-                done = CryptoJS.AES.decrypt(toDo, passwd.value).toString(CryptoJS.enc.Utf8);
-                setTextBox(done);
-                updateTextBox();
+                alert("Type in a password at least 5 characters long!")
             }
         }
         function setTextBox(stringz) {
