@@ -38,18 +38,20 @@
         var go      = document.getElementById("go");
         var cryptYN = document.getElementById("cryptYN");
         var toDo   = "";
-
-        textB.onchange = function () {
+        function updateTextBox() {
             toDo = textB.value;
         }
+        textB.onchange = updateTextBox();
         
         go.onclick = function(evt) {
             if (cryptYN.checked) {
                 var done = CryptoJS.AES.encrypt(toDo, passwd.value);
                 textB.value=done;
+                updateTextBox();
             } else {
                 var done = CryptoJS.AES.decrypt(toDo, passwd.value).toString(CryptoJS.enc.Utf8);
                 textB.value=done;
+                updateTextBox();
             }
         }
         
