@@ -1,7 +1,5 @@
-# HackNA 2019 Project (Called SteelWall)
+# HackNA 2019 Project (Called UltraCrypt)
 
-## A firewall monitor written in Python3
+## A Client-side web encryption/decryption utility
 
-This is similar to GlassWire, but an open source version of it.
-
-Made with TKinter + Python3
+Upload a plaintext file, it gets encrypted with AES-256 bit encryption, and you can decrypt it on the same page. Made with pure HTML, CSS and JavaScript (with a bit of jQuery thrown in)
