@@ -31,28 +31,29 @@
         <button type="button" class="button" id="go">Go!</button>
     </div>
     <iframe id="download_iframe" style="display:none;"></iframe>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="js/aes.js"></script>
     <script>
         var textB   = document.getElementById("text-input");
         var passwd  = document.getElementById("password");
         var go      = document.getElementById("go");
         var cryptYN = document.getElementById("cryptYN");
-        var toDo   = "";
-        function updateTextBox() {
-            toDo = textB.value;
-        }
-        textB.onchange = updateTextBox();
+        var toDo    = "";
+        var done    = "";
         
         go.onclick = function(evt) {
+            toDo = textB.value;
             if (cryptYN.checked) {
-                var done = CryptoJS.AES.encrypt(toDo, passwd.value);
-                textB.value=done;
+                done = CryptoJS.AES.encrypt(toDo.toString(CryptoJS.enc.Utf8), passwd.value);
+                setTextBox(done);
                 updateTextBox();
             } else {
-                var done = CryptoJS.AES.decrypt(toDo, passwd.value).toString(CryptoJS.enc.Utf8);
-                textB.value=done;
+                done = CryptoJS.AES.decrypt(toDo, passwd.value).toString(CryptoJS.enc.Utf8);
+                setTextBox(done);
                 updateTextBox();
             }
+        }
+        function setTextBox(stringz) {
+            textB.value=stringz;
         }
         
     </script>
