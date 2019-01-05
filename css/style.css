@@ -137,4 +137,13 @@ vertical-align: middle;
 
 html {
   background: #fafbfc;
+  font-family: Sans-Serif;
+}
+
+h1 {
+  color: #d3394c;
+}
+
+h4 {
+  color: #d3394c;
 }
