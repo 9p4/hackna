@@ -1,120 +1,128 @@
 .button {
-    border-top: 1px solid #009dff;
-    background: #0099ff;
-    background: -webkit-gradient(linear, left top, left bottom, from(#0099ff), to(#0099ff));
-    background: -webkit-linear-gradient(top, #0099ff, #0099ff);
-    background: -moz-linear-gradient(top, #0099ff, #0099ff);
-    background: -ms-linear-gradient(top, #0099ff, #0099ff);
-    background: -o-linear-gradient(top, #0099ff, #0099ff);
-    padding: 13px 26px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-    box-shadow: rgba(0,0,0,1) 0 1px 0;
-    text-shadow: rgba(0,0,0,.4) 0 1px 0;
-    color: #ffffff;
-    font-size: 21px;
-    font-family: Helvetica, Arial, Sans-Serif;
-    text-decoration: none;
-    vertical-align: middle;
-    }
- .button:hover {
-    border-top-color: #33adff;
-    background: #33adff;
-    color: #ffffff;
-    }
- .button:active {
-    border-top-color: #1b435e;
-    background: #1b435e;
-    }
+background: #d3394c;
+padding: 13px 26px;
+-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+border: 0px;
+color: #ffffff;
+font-size: 21px;
+font-family: Helvetica, Arial, Sans-Serif;
+text-decoration: none;
+vertical-align: middle;
+}
+.button:hover {
+border-top-color: #722040;
+background: #722040;
+color: #ffffff;
+}
+.button:active {
+border-top-color: #d3394c;
+background: #d3394c;
+}
 /* The switch - the box around the slider */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color:#2196F3;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-  .inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
-.inputfile + label {
-    font-size: 1.25em;
-    font-weight: 700;
-    color: white;
-    background-color: black;
-    display: inline-block;
+position: relative;
+display: inline-block;
+width: 60px;
+height: 34px;
 }
 
-.inputfile:focus + label,
-.inputfile + label:hover {
-    background-color: red;
+/* Hide default HTML checkbox */
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
 }
-.inputfile + label {
-	cursor: pointer; /* "hand" cursor */
+
+/* The slider */
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color:#d3394c;
+-webkit-transition: .4s;
+transition: .4s;
 }
-.inputfile:focus + label {
-	outline: 1px dotted #000;
-	outline: -webkit-focus-ring-color auto 5px;
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: #FFFFFF;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: #d3394c;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px #d3394c;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider {
+border-radius: 0px;
+}
+
+.slider:before {
+border-radius: 00%;
+}
+.inputfile {
+width: 0.1px;
+height: 0.1px;
+opacity: 0;
+overflow: hidden;
+position: absolute;
+z-index: -1;
+}
+.Row {
+display: table;
+width: 100%;
+table-layout: fixed;
+border-spacing: 10px;
+justify-content: center;
+}
+.Column {
+display: table-cell;
+vertical-align: middle;
+}
+
+.centered-wrapper {
+  position: relative;
+  text-align: center;
+}
+.centered-wrapper:before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
+}
+.centered-content {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.jLeft {
+  text-align: left;
+}
+
+.jRight {
+  text-align: right;
 }
